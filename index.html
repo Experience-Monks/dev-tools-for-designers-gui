@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Dev Tools for Designers</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+	  <script src="installScript.js"></script> 
+  </head>
+  <body>
+    <div id="container">
+        <div id="left" class='form-container'>
+            <form id='sysCreds' >
+                <div class="form-title">Install Dev Tools</div>
+                <input type='button' class='button' name='sysButt' value='dev-tools' onclick='installDevTools(this.form)'></label>
+            </form>
+            <form id ='gitCreds'>
+                 <div class="form-title">Github Name</div>
+                 <input name='gitName'type="text" class='form-field' />
+                 <div class="form-title">Github Pass</div>
+                 <input name='gitPass'type="password" class='form-field' /><br />
+                <input type='button' class='button' name='gitButt' value='Git' onclick='gitGen(this.form)'>
+            </form>
+        </div>
+        <div id="content">
+            <p>Welcome to the dev-tools installer/git manager, to begin click the dev-tools button to launch the dev-tools installer or enter your git credentials and press the Git button to get your repositories and install the dependencies for your repository.</p>
+            <div id='progress'>
+            </div>
+            <div id='terminal'>
+            </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
