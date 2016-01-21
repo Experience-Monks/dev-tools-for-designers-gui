@@ -159,13 +159,22 @@ function linuxInstall() {
     });
 }
 
+
+
+function installX() {
+	exec('printf "xcode-select --install" > ~/xcode.command && chmod a+x ~/xcode.command &&  open ~/xcode.command')
+}
+
 function darwinInstall(form) {
 	//test for node, subl, git, brew not implemented yet
-
-	exec('xcode-select –-install || true')
+	var sysPass =  form.sysPass.value;
+	//exec('xcode-select –-install || true')
+	exec('mkdir -p ~/homebrew && /usr/bin/curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C ~/homebrew')
 	.then(function() {
-		document.getElementById('progress').innerHTML = 'Installing homebrew...';
-		return exec('mkdir -p ~/homebrew && /usr/bin/curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C ~/homebrew');
+		return exec('echo ' + sysPass + ' | sudo -S chmod -R 777 /usr/local'); 
+	})
+	.then(function () {
+		return exec('mkdir -p /usr/local/bin && mkdir -p /usr/local/share/doc && mkdir -p /usr/local/share/man/man1 || true');
 	})
 	.then(function() {
 		console.log('homebrew install');

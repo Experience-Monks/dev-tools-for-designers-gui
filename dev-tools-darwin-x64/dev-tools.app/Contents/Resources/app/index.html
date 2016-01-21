@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <title>Dev Tools for Designers</title>
       <link rel="stylesheet" type="text/css" href="style.css">
-	  <script src="installScript.js"></script> 
+    <script src="installScript.js"></script> 
   </head>
   <body>
     <div id="container">
         <div id="left" class='form-container'>
+                <div class="form-title">1  Install xcrun</div><hr />
+                <input type='button' class='button' name='sysButt' value='xcode' onclick='installX()'>
             <form id='sysCreds' >
-                <div class="form-title">Install Dev Tools</div>
+                <div class="form-title">2  Install Dev Tools</div><hr />
+                 <div class="form-title">System Pass</div>
+                 <input name='sysPass'type="password" class='form-field' /><br />
                 <input type='button' class='button' name='sysButt' value='dev-tools' onclick='installDevTools(this.form)'></label>
             </form>
             <form id ='gitCreds'>
