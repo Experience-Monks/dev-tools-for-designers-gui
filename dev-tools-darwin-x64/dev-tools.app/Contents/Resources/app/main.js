@@ -10,7 +10,7 @@ function createWindow() {
 	mainWindow = new BrowserWindow({width: 800, height: 600});
 	mainWindow.loadURL('file://' + __dirname + '/index.html');
 	//Dev tools
-	mainWindow.webContents.openDevTools();	
+	//mainWindow.webContents.openDevTools();	
 		// Quit when all windows are closed.
 	mainWindow.on('closed', function() {
 		mainWindow = null;
