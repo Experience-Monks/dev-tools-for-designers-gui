@@ -188,6 +188,11 @@ function darwinInstall(form) {
 		return exec('/usr/local/bin/brew link --overwrite xz');
 	})
 	.then(() => {
+		document.getElementById('progress').innerHTML = 'Brew install git';
+		return exec('/usr/local/bin/brew unlink git || true');
+
+	})
+	.then(() => {
 		return exec('/usr/local/bin/brew install git');
 	})
 	.then(() => {
